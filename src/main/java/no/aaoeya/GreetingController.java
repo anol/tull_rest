@@ -30,11 +30,14 @@ public class GreetingController {
 
     @RequestMapping("/temp")
     public String temp() throws IOException {
-        return pageTemplate.replaceFirst("@temp@", max6675.getTemperature());
+        return pageTemplate
+                .replaceFirst("@refresh@", String.valueOf(1))
+                .replaceFirst("@count@", String.valueOf(counter.incrementAndGet()))
+                .replaceFirst("@temp@", max6675.getTemperature());
     }
 
     private final String pageTemplate = "<!DOCTYPE html>\n" +
-            "<html lang=\"en\"><head><meta charset=\"UTF-8\"/><title>Temp</title></head><body>" +
-            "<table><tbody><tr><th>Temp</th><th>@temp@</th></tr></tbody></table>" +
+            "<html lang=\"en\"><head><meta charset=\"UTF-8\"/><meta http-equiv=\"refresh\" content=\"@refresh@\" ><title>Temp</title></head><body>" +
+            "<table><tbody><tr><th>Temp @count@</th><th>@temp@</th></tr></tbody></table>" +
             "</body></html>";
 }

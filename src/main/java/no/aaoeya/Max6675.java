@@ -15,7 +15,7 @@ public class Max6675 {
 
     public String getTemperature() throws IOException {
         double temperature = getConversionValue();
-        System.out.println(temperature);
+        //System.out.println(temperature);
         return String.valueOf(temperature);
     }
 
