@@ -38,6 +38,6 @@ public class GreetingController {
 
     private final String pageTemplate = "<!DOCTYPE html>\n" +
             "<html lang=\"en\"><head><meta charset=\"UTF-8\"/><meta http-equiv=\"refresh\" content=\"@refresh@\" ><title>Temp</title></head><body>" +
-            "<table><tbody><tr><th>Temp @count@</th><th>@temp@</th></tr></tbody></table>" +
+            "<h1>Temp(@count@): @temp@</h1>" +
             "</body></html>";
 }
