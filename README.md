@@ -1,0 +1,1 @@
+java -cp target/tull_rest-1.0-SNAPSHOT.jar Application
