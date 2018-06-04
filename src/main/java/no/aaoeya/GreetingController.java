@@ -27,4 +27,14 @@ public class GreetingController {
     public Greeting max6675() throws IOException {
         return new Greeting(counter.incrementAndGet(), max6675.getTemperature());
     }
+
+    @RequestMapping("/temp")
+    public String temp() throws IOException {
+        return pageTemplate.replaceFirst("@temp@", max6675.getTemperature());
+    }
+
+    private final String pageTemplate = "<!DOCTYPE html>\n" +
+            "<html lang=\"en\"><head><meta charset=\"UTF-8\"/><title>Temp</title></head><body>" +
+            "<table><tbody><tr><th>Temp</th><th>@temp@</th></tr></tbody></table>" +
+            "</body></html>";
 }

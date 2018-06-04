@@ -19,3 +19,12 @@ public class SPI {
     }
 
 }
+
+/*
+public class SPI {
+    public byte[] write(byte[] txData) {
+        byte[] dummy = {txData[0], txData[1]};
+        return dummy;
+    }
+}
+*/
